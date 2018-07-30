@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Tree" size="0.300000 0.375000" />
+    <ImageTarget name="Buildings" size="0.300000 0.168750" />
+    <ImageTarget name="Vuforia_imagetargets_targets_Rocks" size="1275.000000 892.220093" />
+    <ImageTarget name="Vuforia_imagetargets_targets_Chips" size="1275.000000 891.730652" />
+    <ImageTarget name="Vuforia_imagetargets_targets_Asphalt" size="1275.000000 892.220093" />
+  </Tracking>
+</QCARConfig>
