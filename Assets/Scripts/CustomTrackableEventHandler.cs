@@ -107,7 +107,8 @@ namespace Vuforia
             //GetComponentInChildren<ImageTargetTextScript>().gameObject.GetComponent<Text>().text = "Test Text debug.";
      
             GetComponentInChildren<ImageTargetTextScript>().gameObject.GetComponent<Text>().text = storyEngine.GetComponent<StoryEngineMono>().CreateInfoText(trackableLocation);
-            gameEngineInstance.RandomizeFactoidText();
+            //gameEngineInstance.RandomizeFactoidText(); //old factoid implementation
+            gameEngineInstance.SetNextLocationText();
             Debug.Log("Test Text Debug.");
 
             // Enable colliders:

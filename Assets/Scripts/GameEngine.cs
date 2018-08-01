@@ -11,6 +11,7 @@ public class GameEngine : MonoBehaviour {
     public GameObject mapCanvas;
     private Text mapFactoidText;
     private string selectedFactoid;
+    private string selectedLocationAdvice;
     //public GameObject cameraObject;
 
     private float buttonCooldownTime = 2.0f;
@@ -21,9 +22,10 @@ public class GameEngine : MonoBehaviour {
         mapObject.SetActive(false);
         storyEngineInstance = GameObject.FindGameObjectWithTag("StoryEngine").GetComponent<StoryEngineMono>();
         mapCanvas = GameObject.FindGameObjectWithTag("MapCanvas");
-        
+
         //cameraObject.SetActive(true);
-        RandomizeFactoidText();
+        //RandomizeFactoidText();
+        SetNextLocationText();
 	}
 	
 	// Update is called once per frame
@@ -49,7 +51,8 @@ public class GameEngine : MonoBehaviour {
             {
                 mapObject.SetActive(true);
                 mapFactoidText = GameObject.FindGameObjectWithTag("FactoidText").GetComponent<Text>();
-                mapFactoidText.text = selectedFactoid;
+                //mapFactoidText.text = selectedFactoid;
+                mapFactoidText.text = selectedLocationAdvice;
                 //mapCanvas.GetComponent<MapCanvasScript>().UpdateAdviceIndex(storyEngineInstance.nextLocationAdviceInt); //not working now
             }
         }
@@ -153,10 +156,18 @@ public class GameEngine : MonoBehaviour {
 #endif
     }
 
-    //Sets Map Screens random factoid
+    //Sets Map Screens random factoid. obsolete now
     public void RandomizeFactoidText()
     {
         string factoid = storyEngineInstance.factoids[Random.Range(0, storyEngineInstance.factoids.Length - 1)];
         selectedFactoid = factoid;
+    }
+
+    //Sets maps screen next location advice text
+    //Doesn't seem to set the text. ***Requires Debugging***
+    public void SetNextLocationText()
+    {
+        string advice = storyEngineInstance.locationAdvice[storyEngineInstance.nextLocationAdviceInt];
+        selectedLocationAdvice = advice;
     }
 }

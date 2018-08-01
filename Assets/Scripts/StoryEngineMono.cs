@@ -11,7 +11,7 @@ public class StoryEngineMono : MonoBehaviour {
     public bool[] visitedLocationsBoolean = new bool[11] { false, false, false, false, false, false, false, false, false, false, false };
     public bool testing;
     public string[] factoids = new string[] { "Coffee room is at the other side.", "This is the place of futuristic learning in modern times.", "This is the fourth floor.", "Agora was known as Facility of Natural Sciences 2.", "Agora's renovation was completed 2017." };
-    private string[] locationAdvice = new string[] {"Käy missä vain.",
+    public string[] locationAdvice = new string[] {"Käy missä vain.",
         "Seuraavaksi voitte käydä alulassa haukkaamassa raittiimpaa ilmaa.",
         "Seuraavaksi voitte käydä katsomassa MR-labraa (453).",
         "Seuraavaksi voitte käydä Terveysteknologian toimipisteellä. (452D)",
@@ -102,6 +102,13 @@ public class StoryEngineMono : MonoBehaviour {
 
         if (testing)
         {
+            
+            //check to see if user isn't at the advice location
+            if((int)loc != nextLocationAdviceInt)
+                {
+
+                }
+
 
             //Pre text
             switch (p)
